@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "484493079795",
+    "project_id": "friendly-eats-a0a1d",
+    "storage_bucket": "friendly-eats-a0a1d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484493079795:android:ba32ef4b6d3cdbe907f386",
+        "android_client_info": {
+          "package_name": "com.clubnote.friendly_eats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484493079795-na2qoa4deqllnuu36u22ls4utkdpql7n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApS2CWr-tbUSeIWAiDFDg8_vBM_v3Z29s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484493079795-na2qoa4deqllnuu36u22ls4utkdpql7n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
