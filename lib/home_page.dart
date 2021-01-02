@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
+  static const route = '/';
+  HomePage({Key key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  int _counter = 0;
+  //StreamSubscription<QuerySnapshot> _currentSubscription;
+  bool _isLoading = true;
+  //List<Restaurant> _restaurants = <Restaurant>[];
+  //Filter _filter;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
+  _HomePageState() {
+    FirebaseAuth.instance
+        .signInAnonymously()
+        .then((UserCredential userCredential) {
+      // _currentSubscription = data.loadAllRestaurants().listen(_updateRestaurants);
+        print('auth');
     });
   }
 
@@ -22,26 +29,43 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        leading: Icon(Icons.restaurant),
+        title: Text('FriendlyEats'),
+        bottom: PreferredSize(
+          preferredSize: Size(320, 48),
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(6, 0, 6, 4),
+
+            // child: FilterBar(
+            //   filter: _filter,
+            //   onPressed: _onFilterBarPressed,
+            // ),
+
+            child: Text('test'),
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+      body: Center(
+        child: Container(
+          constraints: BoxConstraints(maxWidth: 1280),
+
+          // child: _isLoading
+          //     ? CircularProgressIndicator()
+          //     : _restaurants.isNotEmpty
+          //     ? RestaurantGrid(
+          //     restaurants: _restaurants,
+          //     onRestaurantPressed: (id) {
+          //       // TODO: Add deep links on web
+          //       Navigator.pushNamed(context, RestaurantPage.route,
+          //           arguments: RestaurantPageArguments(id: id));
+          //     })
+          //     : EmptyListView(
+          //   child: Text('FriendlyEats has no restaurants yet!'),
+          //   onPressed: _onAddRandomRestaurantsPressed,
+          // ),
+
+          child: Text('test2'),
+        ),
       ),
     );
   }
