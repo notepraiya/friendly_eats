@@ -5,7 +5,7 @@ class FriendlyEatsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'FriendlyEats',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
