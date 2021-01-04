@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:friendly_eats/widgets/dialogs/filter_select.dart';
+import 'package:friendly_eats/widgets/filter_bar.dart';
 
 import 'model/data.dart' as data;
 import 'model/filter.dart';
@@ -75,13 +77,10 @@ class _HomePageState extends State<HomePage> {
           preferredSize: Size(320, 48),
           child: Padding(
             padding: EdgeInsets.fromLTRB(6, 0, 6, 4),
-
-            // child: FilterBar(
-            //   filter: _filter,
-            //   onPressed: _onFilterBarPressed,
-            // ),
-
-            child: Text('test'),
+            child: FilterBar(
+              filter: _filter,
+              onPressed: _onFilterBarPressed,
+            ),
           ),
         ),
       ),
