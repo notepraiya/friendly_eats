@@ -47,11 +47,11 @@ class _FilterSelectDialogState extends State<FilterSelectDialog> {
   String _sort;
 
   Widget _buildDropdown<T>(
-      List labels,
-      List values,
-      dynamic selected,
-      FilterChangedCallback<T> onChanged,
-      ) {
+    List labels,
+    List values,
+    dynamic selected,
+    FilterChangedCallback<T> onChanged,
+  ) {
     final items = [
       for (var i = 0; i < values.length; i++)
         DropdownMenuItem<T>(value: values[i], child: Text(labels[i])),

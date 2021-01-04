@@ -88,22 +88,20 @@ class _HomePageState extends State<HomePage> {
         child: Container(
           constraints: BoxConstraints(maxWidth: 1280),
 
-          // child: _isLoading
-          //     ? CircularProgressIndicator()
-          //     : _restaurants.isNotEmpty
-          //     ? RestaurantGrid(
-          //     restaurants: _restaurants,
-          //     onRestaurantPressed: (id) {
-          //       // TODO: Add deep links on web
-          //       Navigator.pushNamed(context, RestaurantPage.route,
-          //           arguments: RestaurantPageArguments(id: id));
-          //     })
-          //     : EmptyListView(
-          //   child: Text('FriendlyEats has no restaurants yet!'),
-          //   onPressed: _onAddRandomRestaurantsPressed,
-          // ),
-
-          child: Text('test2'),
+          child: _isLoading
+              ? CircularProgressIndicator()
+              : _restaurants.isNotEmpty
+              ? RestaurantGrid(
+              restaurants: _restaurants,
+              onRestaurantPressed: (id) {
+                // TODO: Add deep links on web
+                Navigator.pushNamed(context, RestaurantPage.route,
+                    arguments: RestaurantPageArguments(id: id));
+              })
+              : EmptyListView(
+            child: Text('FriendlyEats has no restaurants yet!'),
+            onPressed: _onAddRandomRestaurantsPressed,
+          ),
         ),
       ),
     );
