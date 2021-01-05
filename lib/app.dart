@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:friendly_eats/restaurant_page.dart';
 import 'home_page.dart';
 
 class FriendlyEatsApp extends StatelessWidget {
@@ -12,13 +13,13 @@ class FriendlyEatsApp extends StatelessWidget {
       //home: HomePage(title: 'Flutter Demo Home Page'),
       onGenerateRoute: (settings) {
         switch (settings.name) {
-          // case RestaurantPage.route:
-          //   final RestaurantPageArguments arguments = settings.arguments;
-          //   return MaterialPageRoute(
-          //       builder: (context) => RestaurantPage(
-          //         restaurantId: arguments.id,
-          //       ));
-          //   break;
+          case RestaurantPage.route:
+            final RestaurantPageArguments arguments = settings.arguments;
+            return MaterialPageRoute(
+                builder: (context) => RestaurantPage(
+                  restaurantId: arguments.id,
+                ));
+            break;
           default:
           // return MaterialPageRoute(
           //     builder: (context) => RestaurantPage(

@@ -1,10 +1,14 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:friendly_eats/restaurant_page.dart';
 import 'package:friendly_eats/widgets/dialogs/filter_select.dart';
+import 'package:friendly_eats/widgets/empty_list.dart';
 import 'package:friendly_eats/widgets/filter_bar.dart';
+import 'package:friendly_eats/widgets/grid.dart';
 
 import 'model/data.dart' as data;
 import 'model/filter.dart';
@@ -106,4 +110,11 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+Future<void> _onAddRandomRestaurantsPressed() async {
+  final numReviews = Random().nextInt(10) + 20;
+
+  final restaurants = List.generate(numReviews, (_) => Restaurant.random());
+  data.addRestaurantsBatch(restaurants);
 }
